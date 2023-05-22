@@ -1,0 +1,634 @@
+Group : $unit::coverage::combinational_coverage
+
+===============================================================================
+Group : $unit::coverage::combinational_coverage
+===============================================================================
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING 
+ 77.11  77.11    1      100    1        1            64           64            
+
+
+Source File(s) : 
+
+/root/Documents/FinalProject/coverage.sv
+
+1 Instances:
+
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING NAME          
+ 77.11 1      100    1        64           64            combinational 
+
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   $unit::coverage::combinational_coverage
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 25       5         20      85.56   
+Crosses   720      712       8       1.11    
+
+
+Variables for Group  $unit::coverage::combinational_coverage
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+select   1        0         1       100.00  100  1      1        0                    
+addr     10       3         7       70.00   100  1      1        0                    
+transf   3        0         3       100.00  100  1      1        0                    
+write    2        0         2       100.00  100  1      1        2                    
+size     3        0         3       100.00  100  1      1        0                    
+burst    1        0         1       100.00  100  1      1        0                    
+prot     1        0         1       100.00  100  1      1        0                    
+tresp    2        1         1       50.00   100  1      1        2                    
+tready   2        1         1       50.00   100  1      1        2                    
+
+
+Crosses for Group  $unit::coverage::combinational_coverage
+
+
+CROSS     EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+all_cross 720      712       8       1.11    100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable select
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 1        0         1       100.00  
+
+
+User Defined Bins for select
+
+
+Bins
+
+NAME COUNT AT LEAST 
+on   8     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable addr
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 10       3         7       70.00   
+
+
+User Defined Bins for addr
+
+
+Uncovered bins
+
+NAME          COUNT AT LEAST NUMBER 
+addr[102:203] 0     1        1      
+addr[408:509] 0     1        1      
+addr[612:713] 0     1        1      
+
+
+Covered bins
+
+NAME           COUNT AT LEAST 
+addr[0:101]    3     1        
+addr[204:305]  1     1        
+addr[306:407]  1     1        
+addr[510:611]  1     1        
+addr[714:815]  1     1        
+addr[816:917]  1     1        
+addr[918:1023] 2     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable transf
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for transf
+
+
+Bins
+
+NAME     COUNT AT LEAST 
+transf_0 4     1        
+transf_1 1     1        
+transf_2 5     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable write
+
+
+CATEGORY                     EXPECTED UNCOVERED COVERED PERCENT 
+Automatically Generated Bins 2        0         2       100.00  
+
+
+Automatically Generated Bins for write
+
+
+Bins
+
+NAME    COUNT AT LEAST 
+auto[0] 6     1        
+auto[1] 4     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable size
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for size
+
+
+Bins
+
+NAME   COUNT AT LEAST 
+size_0 4     1        
+size_1 5     1        
+size_2 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable burst
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 1        0         1       100.00  
+
+
+User Defined Bins for burst
+
+
+Bins
+
+NAME    COUNT AT LEAST 
+burst_0 10    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable prot
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 1        0         1       100.00  
+
+
+User Defined Bins for prot
+
+
+Bins
+
+NAME   COUNT AT LEAST 
+prot_1 8     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable tresp
+
+
+CATEGORY                     EXPECTED UNCOVERED COVERED PERCENT 
+Automatically Generated Bins 2        1         1       50.00   
+
+
+Automatically Generated Bins for tresp
+
+
+Uncovered bins
+
+NAME      COUNT AT LEAST NUMBER 
+[auto[1]] 0     1        1      
+
+
+Covered bins
+
+NAME    COUNT AT LEAST 
+auto[0] 10    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable tready
+
+
+CATEGORY                     EXPECTED UNCOVERED COVERED PERCENT 
+Automatically Generated Bins 2        1         1       50.00   
+
+
+Automatically Generated Bins for tready
+
+
+Uncovered bins
+
+NAME      COUNT AT LEAST NUMBER 
+[auto[0]] 0     1        1      
+
+
+Covered bins
+
+NAME    COUNT AT LEAST 
+auto[1] 10    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross all_cross
+
+
+Samples crossed: select addr transf write size burst prot tresp tready
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 720      712       8       1.11    712     
+
+
+Automatically Generated Cross Bins for all_cross
+
+
+Element holes
+
+select addr             transf                write     size              burst prot tresp     tready    COUNT AT LEAST NUMBER 
+*      [addr[0:101]]    [transf_0 , transf_1] *         *                 *     *    *         *         --    --       48     
+*      [addr[0:101]]    [transf_2]            [auto[0]] [size_0]          *     *    [auto[0]] [auto[0]] 0     1        1      
+*      [addr[0:101]]    [transf_2]            [auto[0]] [size_0]          *     *    [auto[1]] *         --    --       2      
+*      [addr[0:101]]    [transf_2]            [auto[0]] [size_1 , size_2] *     *    *         *         --    --       8      
+*      [addr[0:101]]    [transf_2]            [auto[1]] *                 *     *    *         *         --    --       12     
+*      [addr[102:203]]  *                     *         *                 *     *    *         *         --    --       72     
+*      [addr[204:305]]  [transf_0]            [auto[0]] [size_0]          *     *    *         *         --    --       4      
+*      [addr[204:305]]  [transf_0]            [auto[0]] [size_1]          *     *    [auto[0]] [auto[0]] 0     1        1      
+*      [addr[204:305]]  [transf_0]            [auto[0]] [size_1]          *     *    [auto[1]] *         --    --       2      
+*      [addr[204:305]]  [transf_0]            [auto[0]] [size_2]          *     *    *         *         --    --       4      
+*      [addr[204:305]]  [transf_0]            [auto[1]] *                 *     *    *         *         --    --       12     
+*      [addr[204:305]]  [transf_1 , transf_2] *         *                 *     *    *         *         --    --       48     
+*      [addr[306:407]]  [transf_0 , transf_1] *         *                 *     *    *         *         --    --       48     
+*      [addr[306:407]]  [transf_2]            [auto[0]] *                 *     *    *         *         --    --       12     
+*      [addr[306:407]]  [transf_2]            [auto[1]] [size_0]          *     *    *         *         --    --       4      
+*      [addr[306:407]]  [transf_2]            [auto[1]] [size_1]          *     *    [auto[0]] [auto[0]] 0     1        1      
+*      [addr[306:407]]  [transf_2]            [auto[1]] [size_1]          *     *    [auto[1]] *         --    --       2      
+*      [addr[306:407]]  [transf_2]            [auto[1]] [size_2]          *     *    *         *         --    --       4      
+*      [addr[408:509]]  *                     *         *                 *     *    *         *         --    --       72     
+*      [addr[510:611]]  [transf_0]            [auto[0]] *                 *     *    *         *         --    --       12     
+*      [addr[510:611]]  [transf_0]            [auto[1]] [size_0]          *     *    *         *         --    --       4      
+*      [addr[510:611]]  [transf_0]            [auto[1]] [size_1]          *     *    [auto[0]] [auto[0]] 0     1        1      
+*      [addr[510:611]]  [transf_0]            [auto[1]] [size_1]          *     *    [auto[1]] *         --    --       2      
+*      [addr[510:611]]  [transf_0]            [auto[1]] [size_2]          *     *    *         *         --    --       4      
+*      [addr[510:611]]  [transf_1 , transf_2] *         *                 *     *    *         *         --    --       48     
+*      [addr[612:713]]  *                     *         *                 *     *    *         *         --    --       72     
+*      [addr[714:815]]  [transf_0]            *         *                 *     *    *         *         --    --       24     
+*      [addr[714:815]]  [transf_1]            [auto[0]] [size_0 , size_1] *     *    *         *         --    --       8      
+*      [addr[714:815]]  [transf_1]            [auto[0]] [size_2]          *     *    [auto[0]] [auto[0]] 0     1        1      
+*      [addr[714:815]]  [transf_1]            [auto[0]] [size_2]          *     *    [auto[1]] *         --    --       2      
+*      [addr[714:815]]  [transf_1]            [auto[1]] *                 *     *    *         *         --    --       12     
+*      [addr[714:815]]  [transf_2]            *         *                 *     *    *         *         --    --       24     
+*      [addr[816:917]]  [transf_0 , transf_1] *         *                 *     *    *         *         --    --       48     
+*      [addr[816:917]]  [transf_2]            [auto[0]] *                 *     *    *         *         --    --       12     
+*      [addr[816:917]]  [transf_2]            [auto[1]] [size_0]          *     *    [auto[0]] [auto[0]] 0     1        1      
+*      [addr[816:917]]  [transf_2]            [auto[1]] [size_0]          *     *    [auto[1]] *         --    --       2      
+*      [addr[816:917]]  [transf_2]            [auto[1]] [size_1 , size_2] *     *    *         *         --    --       8      
+*      [addr[918:1023]] [transf_0 , transf_1] *         *                 *     *    *         *         --    --       48     
+*      [addr[918:1023]] [transf_2]            *         [size_0]          *     *    *         *         --    --       8      
+*      [addr[918:1023]] [transf_2]            *         [size_1]          *     *    [auto[0]] [auto[0]] --    --       2      
+*      [addr[918:1023]] [transf_2]            *         [size_1]          *     *    [auto[1]] *         --    --       4      
+*      [addr[918:1023]] [transf_2]            *         [size_2]          *     *    *         *         --    --       8      
+
+
+Covered bins
+
+select addr           transf   write   size   burst   prot   tresp   tready  COUNT AT LEAST 
+on     addr[0:101]    transf_2 auto[0] size_0 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[510:611]  transf_0 auto[1] size_1 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[306:407]  transf_2 auto[1] size_1 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[918:1023] transf_2 auto[0] size_1 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[918:1023] transf_2 auto[1] size_1 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[714:815]  transf_1 auto[0] size_2 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[204:305]  transf_0 auto[0] size_1 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[816:917]  transf_2 auto[1] size_0 burst_0 prot_1 auto[0] auto[1] 1     1        
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Group Instance : combinational
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+ 77.11 1      100    1        64           64            
+
+
+Group:
+
+SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                                    
+ 77.11  77.11    1      100    1        1            64           64                    $unit::coverage::combinational_coverage 
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group Instance   combinational
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 25       5         20      85.56   
+Crosses   720      712       8       1.11    
+
+
+Variables for Group Instance  combinational
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+select   1        0         1       100.00  100  1      1        0                    
+addr     10       3         7       70.00   100  1      1        0                    
+transf   3        0         3       100.00  100  1      1        0                    
+write    2        0         2       100.00  100  1      1        2                    
+size     3        0         3       100.00  100  1      1        0                    
+burst    1        0         1       100.00  100  1      1        0                    
+prot     1        0         1       100.00  100  1      1        0                    
+tresp    2        1         1       50.00   100  1      1        2                    
+tready   2        1         1       50.00   100  1      1        2                    
+
+
+Crosses for Group Instance  combinational
+
+
+CROSS     EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
+all_cross 720      712       8       1.11    100  1      1        0                     
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable select
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 1        0         1       100.00  
+
+
+User Defined Bins for select
+
+
+Bins
+
+NAME COUNT AT LEAST 
+on   8     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable addr
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 10       3         7       70.00   
+
+
+User Defined Bins for addr
+
+
+Uncovered bins
+
+NAME          COUNT AT LEAST NUMBER 
+addr[102:203] 0     1        1      
+addr[408:509] 0     1        1      
+addr[612:713] 0     1        1      
+
+
+Covered bins
+
+NAME           COUNT AT LEAST 
+addr[0:101]    3     1        
+addr[204:305]  1     1        
+addr[306:407]  1     1        
+addr[510:611]  1     1        
+addr[714:815]  1     1        
+addr[816:917]  1     1        
+addr[918:1023] 2     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable transf
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for transf
+
+
+Bins
+
+NAME     COUNT AT LEAST 
+transf_0 4     1        
+transf_1 1     1        
+transf_2 5     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable write
+
+
+CATEGORY                     EXPECTED UNCOVERED COVERED PERCENT 
+Automatically Generated Bins 2        0         2       100.00  
+
+
+Automatically Generated Bins for write
+
+
+Bins
+
+NAME    COUNT AT LEAST 
+auto[0] 6     1        
+auto[1] 4     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable size
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 3        0         3       100.00  
+
+
+User Defined Bins for size
+
+
+Bins
+
+NAME   COUNT AT LEAST 
+size_0 4     1        
+size_1 5     1        
+size_2 1     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable burst
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 1        0         1       100.00  
+
+
+User Defined Bins for burst
+
+
+Bins
+
+NAME    COUNT AT LEAST 
+burst_0 10    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable prot
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 1        0         1       100.00  
+
+
+User Defined Bins for prot
+
+
+Bins
+
+NAME   COUNT AT LEAST 
+prot_1 8     1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable tresp
+
+
+CATEGORY                     EXPECTED UNCOVERED COVERED PERCENT 
+Automatically Generated Bins 2        1         1       50.00   
+
+
+Automatically Generated Bins for tresp
+
+
+Uncovered bins
+
+NAME      COUNT AT LEAST NUMBER 
+[auto[1]] 0     1        1      
+
+
+Covered bins
+
+NAME    COUNT AT LEAST 
+auto[0] 10    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable tready
+
+
+CATEGORY                     EXPECTED UNCOVERED COVERED PERCENT 
+Automatically Generated Bins 2        1         1       50.00   
+
+
+Automatically Generated Bins for tready
+
+
+Uncovered bins
+
+NAME      COUNT AT LEAST NUMBER 
+[auto[0]] 0     1        1      
+
+
+Covered bins
+
+NAME    COUNT AT LEAST 
+auto[1] 10    1        
+
+
+-------------------------------------------------------------------------------
+
+Summary for Cross all_cross
+
+
+Samples crossed: select addr transf write size burst prot tresp tready
+CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
+Automatically Generated Cross Bins 720      712       8       1.11    712     
+
+
+Automatically Generated Cross Bins for all_cross
+
+
+Element holes
+
+select addr             transf                write     size              burst prot tresp     tready    COUNT AT LEAST NUMBER 
+*      [addr[0:101]]    [transf_0 , transf_1] *         *                 *     *    *         *         --    --       48     
+*      [addr[0:101]]    [transf_2]            [auto[0]] [size_0]          *     *    [auto[0]] [auto[0]] 0     1        1      
+*      [addr[0:101]]    [transf_2]            [auto[0]] [size_0]          *     *    [auto[1]] *         --    --       2      
+*      [addr[0:101]]    [transf_2]            [auto[0]] [size_1 , size_2] *     *    *         *         --    --       8      
+*      [addr[0:101]]    [transf_2]            [auto[1]] *                 *     *    *         *         --    --       12     
+*      [addr[102:203]]  *                     *         *                 *     *    *         *         --    --       72     
+*      [addr[204:305]]  [transf_0]            [auto[0]] [size_0]          *     *    *         *         --    --       4      
+*      [addr[204:305]]  [transf_0]            [auto[0]] [size_1]          *     *    [auto[0]] [auto[0]] 0     1        1      
+*      [addr[204:305]]  [transf_0]            [auto[0]] [size_1]          *     *    [auto[1]] *         --    --       2      
+*      [addr[204:305]]  [transf_0]            [auto[0]] [size_2]          *     *    *         *         --    --       4      
+*      [addr[204:305]]  [transf_0]            [auto[1]] *                 *     *    *         *         --    --       12     
+*      [addr[204:305]]  [transf_1 , transf_2] *         *                 *     *    *         *         --    --       48     
+*      [addr[306:407]]  [transf_0 , transf_1] *         *                 *     *    *         *         --    --       48     
+*      [addr[306:407]]  [transf_2]            [auto[0]] *                 *     *    *         *         --    --       12     
+*      [addr[306:407]]  [transf_2]            [auto[1]] [size_0]          *     *    *         *         --    --       4      
+*      [addr[306:407]]  [transf_2]            [auto[1]] [size_1]          *     *    [auto[0]] [auto[0]] 0     1        1      
+*      [addr[306:407]]  [transf_2]            [auto[1]] [size_1]          *     *    [auto[1]] *         --    --       2      
+*      [addr[306:407]]  [transf_2]            [auto[1]] [size_2]          *     *    *         *         --    --       4      
+*      [addr[408:509]]  *                     *         *                 *     *    *         *         --    --       72     
+*      [addr[510:611]]  [transf_0]            [auto[0]] *                 *     *    *         *         --    --       12     
+*      [addr[510:611]]  [transf_0]            [auto[1]] [size_0]          *     *    *         *         --    --       4      
+*      [addr[510:611]]  [transf_0]            [auto[1]] [size_1]          *     *    [auto[0]] [auto[0]] 0     1        1      
+*      [addr[510:611]]  [transf_0]            [auto[1]] [size_1]          *     *    [auto[1]] *         --    --       2      
+*      [addr[510:611]]  [transf_0]            [auto[1]] [size_2]          *     *    *         *         --    --       4      
+*      [addr[510:611]]  [transf_1 , transf_2] *         *                 *     *    *         *         --    --       48     
+*      [addr[612:713]]  *                     *         *                 *     *    *         *         --    --       72     
+*      [addr[714:815]]  [transf_0]            *         *                 *     *    *         *         --    --       24     
+*      [addr[714:815]]  [transf_1]            [auto[0]] [size_0 , size_1] *     *    *         *         --    --       8      
+*      [addr[714:815]]  [transf_1]            [auto[0]] [size_2]          *     *    [auto[0]] [auto[0]] 0     1        1      
+*      [addr[714:815]]  [transf_1]            [auto[0]] [size_2]          *     *    [auto[1]] *         --    --       2      
+*      [addr[714:815]]  [transf_1]            [auto[1]] *                 *     *    *         *         --    --       12     
+*      [addr[714:815]]  [transf_2]            *         *                 *     *    *         *         --    --       24     
+*      [addr[816:917]]  [transf_0 , transf_1] *         *                 *     *    *         *         --    --       48     
+*      [addr[816:917]]  [transf_2]            [auto[0]] *                 *     *    *         *         --    --       12     
+*      [addr[816:917]]  [transf_2]            [auto[1]] [size_0]          *     *    [auto[0]] [auto[0]] 0     1        1      
+*      [addr[816:917]]  [transf_2]            [auto[1]] [size_0]          *     *    [auto[1]] *         --    --       2      
+*      [addr[816:917]]  [transf_2]            [auto[1]] [size_1 , size_2] *     *    *         *         --    --       8      
+*      [addr[918:1023]] [transf_0 , transf_1] *         *                 *     *    *         *         --    --       48     
+*      [addr[918:1023]] [transf_2]            *         [size_0]          *     *    *         *         --    --       8      
+*      [addr[918:1023]] [transf_2]            *         [size_1]          *     *    [auto[0]] [auto[0]] --    --       2      
+*      [addr[918:1023]] [transf_2]            *         [size_1]          *     *    [auto[1]] *         --    --       4      
+*      [addr[918:1023]] [transf_2]            *         [size_2]          *     *    *         *         --    --       8      
+
+
+Covered bins
+
+select addr           transf   write   size   burst   prot   tresp   tready  COUNT AT LEAST 
+on     addr[0:101]    transf_2 auto[0] size_0 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[510:611]  transf_0 auto[1] size_1 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[306:407]  transf_2 auto[1] size_1 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[918:1023] transf_2 auto[0] size_1 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[918:1023] transf_2 auto[1] size_1 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[714:815]  transf_1 auto[0] size_2 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[204:305]  transf_0 auto[0] size_1 burst_0 prot_1 auto[0] auto[1] 1     1        
+on     addr[816:917]  transf_2 auto[1] size_0 burst_0 prot_1 auto[0] auto[1] 1     1        
+
+

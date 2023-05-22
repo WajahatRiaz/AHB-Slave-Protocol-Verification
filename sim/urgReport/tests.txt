@@ -1,1 +1,12 @@
+Tests
+
+Total Coverage Summary 
+SCORE  GROUP  
+ 77.11  77.11 
+
+
+Total tests in report: 1
+-------------------------------------------------------------------------------
+Data from the following tests was used to generate this report
+simv/test 
 

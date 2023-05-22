@@ -1,0 +1,22 @@
+Dashboard
+
+Date: Mon May 22 16:39:33 2023
+
+User: unknown
+
+Version: L-2016.06
+Command line: urg -lca -dir simv.vdb -show text 
+
+Number of tests: 1
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  GROUP  
+ 77.11  77.11 
+
+
+-------------------------------------------------------------------------------
+Total Groups Coverage Summary 
+SCORE  INST SCORE WEIGHT 
+ 77.11  77.11     1      
+

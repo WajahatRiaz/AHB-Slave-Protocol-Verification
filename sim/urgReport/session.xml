@@ -1,0 +1,19 @@
+<session version="1.1" release="L-2016.06" timestp="2023-05-22 08:45:03 GMT">
+  <hvp>
+    <datadef>
+      <metdef name="Group" type="percent" aggregator="average" builtin="1" />
+    </datadef>
+  </hvp>
+  <old_coverage>
+  <scope type="top" name="top">
+    <metric name="Group" value="80.8194%" />
+  </scope>
+  <scope type="instance" name="top">
+  </scope>
+  <scope type="group" name="top">
+    <scope type="group" name="$unit::coverage::combinational_coverage">
+      <metric name="Group" value="80.8194%" />
+    </scope>
+  </scope>
+  </old_coverage>
+</session>
