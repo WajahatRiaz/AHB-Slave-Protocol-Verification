@@ -16,6 +16,10 @@
 `include "test.sv"
 //`include "test_bonus_rw.sv"
 //`include "test_bonus_all_read.sv"
+//`include "test_bonus_all_write.sv"
+//`include "test_bonus_IDLE_NONSEQ.sv"
+//`include "test_bonus_no_slave.sv"
+//`inlcude "test_bonus_no_data_acces.sv"
 
 module tb_top;
 
@@ -58,8 +62,7 @@ module tb_top;
 	// instantiating the tests and passing the interface
 	
 	 test t1(vif);
-    
-	// BONUS TASKS
+   
 
 	// N number of transactions implemented in all tests
 
@@ -70,6 +73,22 @@ module tb_top;
 	// Add a test case for all read transactions using pre_randomize method for checking reset state of design memory.
 	
 	// test_bonus_all_read t3(vif);
+	
+	
+	// Add a test case for all write transactions using pre_randomize method
+	
+	// test_bonus_all_write t4(vif);
+	
+	// Add a test case for all write transactions using pre_randomize method
+	
+	//test_bonus_IDLE_NONSEQ t5(vif);
+	
+	// test case to check response incase slave gets disconnected
+	
+	// test_bonus_no_slave t6(vif);
+	
+	// test case to check response in case bypassing priviledge level
+	//test_bonus_no_data_acces
 
 	initial begin
 	// initial block for dumping and creating necessary file for gtkwave
