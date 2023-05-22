@@ -16,7 +16,8 @@ class scoreboard;
 	int local_count =0;               // local count to track how many transactions have been completed
 	int idle_count=0;                 // to keep track of our IDLE transactions
 	int busy_count=0;                 // to keep track of our BUSY transactions
-
+	int endian = 0;                   // determines endianness, 0 means little and 1 means big
+	
 	bit [7:0] mem[0:1023];            // emulating a memory in scoreboard, similar to slave
 	
 	// The new constructor for intialization
@@ -35,7 +36,7 @@ task main();
 			mon2scor.get(trans);
 			
 			// We want to make sure that our slave device is connected
-			if(trans.hsel==1)begin	
+			if(trans.hsel==1 && trans.hprot ==1)begin	
 				
 				// checking if our transfer was IDLE or not
 				if(trans.htrans== 0) begin
@@ -49,7 +50,7 @@ task main();
           
          		// checking if our transfer was BUSY or not
 		  		else if(trans.htrans== 1) begin 
-            		// an IDLE transfer does nothing so I just printed some things to verify 
+            		// an BUSY transfer does nothing so I just printed some things to verify 
             		busy_count++;
 					if(trans.hresp== 0) $display("[ScoreBoard]| Slave response is OKAY to an BUSY trans: LEGAL\n");
 					else $display("[ScoreBoard]| Slave response is ERROR to an BUSY trans: ILLEGAL\n");
@@ -69,16 +70,34 @@ task main();
 						
 						// write operation for halfword
 						else if (trans.hsize == 1) begin
-							mem[trans.haddr] = trans.hwdata[7:0];
-							mem[trans.haddr + 1] = trans.hwdata[15:8];
+						
+							if(endian == 0) begin  // little endian
+								mem[trans.haddr] = trans.hwdata[7:0];
+								mem[trans.haddr + 1] = trans.hwdata[15:8];
+							end
+							
+							else begin   // big endian
+								mem[trans.haddr] = trans.hwdata[15:8];  
+								mem[trans.haddr + 1] = trans.hwdata[7:0];
+							end
+							
 						end
 						
 						// write operation for word
 						else if (trans.hsize == 2) begin
-							mem[trans.haddr] = trans.hwdata[7:0];
-							mem[trans.haddr + 1] = trans.hwdata[15:8];
-							mem[trans.haddr + 2] = trans.hwdata[23:16];
-							mem[trans.haddr + 3] = trans.hwdata[31:24];
+							if (endian ==0) begin   // little endian
+								mem[trans.haddr] = trans.hwdata[7:0];
+								mem[trans.haddr + 1] = trans.hwdata[15:8];
+								mem[trans.haddr + 2] = trans.hwdata[23:16];
+								mem[trans.haddr + 3] = trans.hwdata[31:24];
+							end
+							
+							else begin    // big endian
+								mem[trans.haddr] = trans.hwdata[31:24];
+								mem[trans.haddr + 1] = trans.hwdata[23:16];
+								mem[trans.haddr + 2] = trans.hwdata[15:8];
+								mem[trans.haddr + 3] = trans.hwdata[7:0];
+							end
 						end
 						
 					end
@@ -152,7 +171,10 @@ task main();
 			end
 			
 			// we also wish to log when slave was not connected
-			else $display("Slave not connected yet");
+			else begin
+				if(trans.hsel) $display("Slave not connected yet");
+				if(trans.hprot) $display("Exception, only data access allowed");
+			end
 			cg.sample(trans);
 			local_count++;
 		end
