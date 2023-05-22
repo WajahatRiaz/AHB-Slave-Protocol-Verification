@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////
 //                                                                          //
 //  Name:                                                                   //
-//        transaction.sv												    //
+//        transaction.sv						    //
 //                                                                          //
 // Description:                                                             //
 //           Fields required to generate the stimulus                       //
@@ -13,15 +13,15 @@ class transaction;
 	rand  bit [1:0]     htrans;
 	rand  bit [2:0]     hsize;
 	randc bit [2:0]     hburst;
-    randc bit [3:0]     hprot;
-    randc bit [31:0]    hwdata;
-    randc bit	        error;
+    	randc bit [3:0]     hprot;
+    	randc bit [31:0]    hwdata;
+    	randc bit	    error;
 	rand  bit           hsel;
 	
 	randc bit           hwrite;
-		  bit [31:0]    hrdata;
-     	  bit           hready;
-    	  bit 			hresp;
+	      bit [31:0]    hrdata;
+     	      bit           hready;
+    	      bit 	    hresp;
 	
 	// Method for implementing blueprint pattern
 	virtual function transaction copy;
@@ -32,7 +32,7 @@ class transaction;
 		copy.hsize=hsize;
 		copy.hburst=hburst;
 		copy.hprot=hprot;
-	    copy.hwdata=hwdata;
+	        copy.hwdata=hwdata;
 		copy.hrdata=hrdata;
 		copy.hready=hready;
 		copy.hresp=hresp;
@@ -56,10 +56,10 @@ class transaction;
 	// Transfer types i.e. IDLE, BUSY and NONSEQ
 	constraint constraint_htrans{ htrans dist{2'b00:/10 , 2'b01:/10, 2'b10:/80};}
 	
-	constraint constraint_haddr{if (hsize == 1) haddr[1:0] == 0;  // address alignment to halfword boundary
-								if (hsize ==2) haddr[0] == 0;     // address alignment to word boundary
-								haddr inside {[0:1023]};          // The size of the slave memory is smaller
-								solve hsize before haddr;}    
+	constraint constraint_haddr{if (hsize == 2) haddr[1:0] == 0;  // address alignment to word boundary
+				    if (hsize == 1) haddr[0] == 0;    // address alignment to halfword boundary
+				    haddr inside {[0:1023]};          // The size of the slave memory is smaller
+				    solve hsize before haddr;}    
 
 	// Error constraint for basic transaction								                              
 	constraint constraint_error{error==0;}
@@ -73,12 +73,12 @@ class transaction;
 		$display("| hwrite: 1'b%0b", hwrite);
 	 	$display("| hsize : 3'b%0b", hsize);
 		$display("| hburst: 3'b%0b", hburst);
-     	$display("| hprot : 4'b%0b", hprot);
-     	$display("| hwdata : 32'h%0h", hwdata);
-     	$display("| error : 1'b%0b", error);
+     	        $display("| hprot : 4'b%0b", hprot);
+     	        $display("| hwdata : 32'h%0h", hwdata);
+     	        $display("| error : 1'b%0b", error);
 		$display("| hrdata: 32'h%0h", hrdata);
-     	$display("| hready: 1'b%0b", hready);
-    	$display("| hresp : 1'b%0b", hresp);
+     	        $display("| hready: 1'b%0b", hready);
+    	        $display("| hresp : 1'b%0b", hresp);
 	 	$display("| hsel  : 1'b%0b",hsel);
 		$display("--------------------------");	
 		
