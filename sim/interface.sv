@@ -9,19 +9,19 @@
 //////////////////////////////////////////////////////////////////////////////
 interface dut_interface(input logic hclk, input logic hresetn);
 	
-	logic 			hsel;
+	logic 		hsel;
 	logic [31:0] 	haddr;
 	logic [1:0] 	htrans;
-	logic 			hwrite;
+	logic 		hwrite;
 	logic [2:0] 	hsize;
-	logic [2:0]		hburst;
+	logic [2:0]	hburst;
 	logic [3:0]     hprot;
 	logic [31:0]	hwdata;
 	
 	logic [31:0]	hrdata;
-	logic 			hready;
-	logic 			hresp;
-	wor 			error;
+	logic 		hready;
+	logic 		hresp;
+	wor 		error;
 
 clocking cb_driver @(posedge hclk);
 	default input #1 output #1;
